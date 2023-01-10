@@ -4,7 +4,7 @@ namespace PastaShop.Services
 {
     public class PastaService
     {
-        private List<Bestelling>? bestellingen;
+        private List<Bestelling>? bestellingen = new List<Bestelling>();
 
         public List<Bestelling> FindAll()
         {

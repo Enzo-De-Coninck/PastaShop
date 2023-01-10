@@ -1,14 +1,24 @@
 ﻿@model Bestelling
 
 @{
-    ViewBag.Title = "Toevoegen";
+    ViewBag.Title = "Index";
 }
 
 <div class="text-center">
-    <form asp-action="Toevoegen" method="post">
+    <form class="form-style-1" asp-action="Toevoegen" method="post">
         <h2>1. Kies de pasta</h2>
         <select asp-for="Pasta"
             asp-items="@new SelectList(Enum.GetNames(typeof(Pasta)))">
         </select>
+        <h2>2. Kies de grootte</h2>
+        <select asp-for="Grootte"
+            asp-items="@new SelectList(Enum.GetNames(typeof(Grootte)))">
+        </select>
+        <h2>3. Kies de saus</h2>
+        <select asp-for="Saus"
+            asp-items="@new SelectList(Enum.GetNames(typeof(Saus)))">
+        </select>
+        <br />
+        <input type="submit" value="Voeg bestelling toe" />
     </form>
 </div>

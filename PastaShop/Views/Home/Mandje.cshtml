@@ -1,0 +1,23 @@
+﻿@model List<Bestelling>
+<h2>Overzicht bestellingen</h2>
+@if (Model != null) {
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Pastasoort</th>
+                <th>Grootte</th>
+                <th>Saus</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bestelling in Model)
+            {
+                <tr>
+                    <td>@bestelling.Pasta</td>
+                    <td>@bestelling.Grootte</td>
+                    <td>@bestelling.Saus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

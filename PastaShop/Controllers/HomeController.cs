@@ -19,6 +19,10 @@ namespace PastaShop.Controllers
             return View();
         }
 
+        public IActionResult Nieuwsbrief()
+        {
+            return View();
+        }
        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -47,6 +51,11 @@ namespace PastaShop.Controllers
             {
                 return View(b);
             }
+        }
+
+        public IActionResult Mandje()
+        {
+            return View(_pastaService.FindAll());
         }
     }
 }
