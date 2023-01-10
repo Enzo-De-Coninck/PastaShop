@@ -1,7 +1,20 @@
-﻿
+﻿@model Persoon
 @{
-    ViewData["Title"] = "Nieuwsbrief";
+    ViewBag.Title = "Nieuwsbrief";
 }
-
-<h1>Nieuwsbrief</h1>
-
+<h2>Schrijf hier in voor onze nieuwsbrief</h2>
+<form asp-action="Nieuwsbrief" method="post">
+    <label asp-for="Naam"></label>
+    <input asp-for="Naam"/>
+    <label asp-for="Voornaam"></label>
+    <input asp-for="Voornaam"/>
+    <label asp-for="Emailadres"></label>
+    <input asp-for="Emailadres"/>
+    <label asp-for="Telefoon"></label>
+    <input asp-for="Telefoon"/>
+    <label asp-for="Geboortedatum"></label>
+    <input asp-for="Geboortedatum"/>
+    <input type="submit" value="Inschrijven" asp-action="Inschrijven" />
+    @Html.ValidationSummary("Er zijn validatiefouten:")
+    <div asp-validation-summary="All"></div>
+</form>

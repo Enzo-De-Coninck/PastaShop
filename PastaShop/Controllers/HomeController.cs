@@ -2,6 +2,7 @@
 using PastaShop.Models;
 using PastaShop.Services;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace PastaShop.Controllers
 {
@@ -19,9 +20,17 @@ namespace PastaShop.Controllers
             return View();
         }
 
-        public IActionResult Nieuwsbrief()
+        public IActionResult Nieuwsbrief(Persoon p)
         {
-            return View();
+            if (this.ModelState.IsValid)
+            {
+                return RedirectToAction("Inschrijven");
+            }
+            else
+            {
+                return View(p);
+            }
+            
         }
        
 
@@ -57,5 +66,21 @@ namespace PastaShop.Controllers
         {
             return View(_pastaService.FindAll());
         }
+
+       
+
+        [HttpPost]
+        public IActionResult Inschrijven(Persoon p)
+        {
+            if (this.ModelState.IsValid)
+            {
+                return View(p);
+            }
+            else
+                return RedirectToAction("Nieuwsbrief");
+
+        }
+
+        
     }
 }
