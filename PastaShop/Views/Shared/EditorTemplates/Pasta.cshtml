@@ -1,0 +1,20 @@
+﻿@model Pasta
+@Html.DropDownList("",
+    new SelectListItem[] {
+        new SelectListItem() {
+            Text="Penne",
+            Value=Pasta.Penne.ToString(),
+            Selected = Model==Pasta.Penne
+        },
+        new SelectListItem() {
+            Text="Spaghetti",
+            Value=Pasta.Spaghetti.ToString(),
+            Selected = Model==Pasta.Spaghetti
+        },
+        new SelectListItem() {
+            Text="Fusili",
+            Value=Pasta.Fusili.ToString(),
+            Selected = Model==Pasta.Fusili
+        }
+    }
+    )

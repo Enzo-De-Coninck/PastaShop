@@ -1,0 +1,14 @@
+﻿@model Bestelling
+
+@{
+    ViewBag.Title = "Toevoegen";
+}
+
+<div class="text-center">
+    <form asp-action="Toevoegen" method="post">
+        <h2>1. Kies de pasta</h2>
+        <select asp-for="Pasta"
+            asp-items="@new SelectList(Enum.GetNames(typeof(Pasta)))">
+        </select>
+    </form>
+</div>
